@@ -1109,11 +1109,11 @@ namespace MtApi5
         ///<param name="startPos">The start position for the first element to copy.</param>
         ///<param name="count">Data count to copy.</param>
         ///<param name="openArray">Array of double type.</param>
-        public int CopyOpen(string symbolName, ENUM_TIMEFRAMES timeframe, int startPos, int count, out double[] openArray)
+        public int CopyOpen(string symbolName, ENUM_TIMEFRAMES timeframe, int startPos, int count, out string[] openArray)
         {
             var commandParameters = new ArrayList { symbolName, (int)timeframe, startPos, count };
 
-            openArray = SendCommand<double[]>(Mt5CommandType.CopyOpen, commandParameters);
+            openArray = SendCommand<string[]>(Mt5CommandType.CopyOpen, commandParameters);
 
             return openArray?.Length ?? 0;
         }

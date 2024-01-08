@@ -663,7 +663,7 @@ namespace MtApi5TestClient
 
             var result = await Execute(() =>
             {
-                double[] array;
+                string[] array;
                 var count = _mtApiClient.CopyOpen(TimeSeriesValues.SymbolValue, TimeSeriesValues.TimeFrame, TimeSeriesValues.StartPos, TimeSeriesValues.Count, out array);
                 return count > 0 ? array : null;
             });
